@@ -50,7 +50,14 @@ class UserController {
 			});
 			res.locals = {
 				status: 200,
-				data: { token },
+				data: {
+					token,
+					user: {
+						id: user._id,
+						email: user.email,
+						isAdmin: user.isAdmin,
+					},
+				},
 			};
 			return next();
 		} catch (error) {
@@ -114,7 +121,14 @@ class UserController {
 			});
 			res.locals = {
 				status: 200,
-				data: { token },
+				data: {
+					token,
+					user: {
+						id: user._id,
+						email: user.email,
+						isAdmin: user.isAdmin,
+					},
+				},
 			};
 			return next();
 		} catch (error) {
