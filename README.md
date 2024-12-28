@@ -12,7 +12,7 @@ This README provides an overview of the API routes available in the e-commerce b
     -   `password`: string
     -   `name`: string
 -   **Response**:
-    -   Success: User details (without password)
+    -   Success: JWT Authentication token, User details (without password),
 
 ### POST `/login`
 
@@ -21,7 +21,7 @@ This README provides an overview of the API routes available in the e-commerce b
     -   `email`: string
     -   `password`: string
 -   **Response**:
-    -   Success: Authentication token
+    -   Success: JWT Authentication token
 
 ### PUT `/grant-admin-access`
 
