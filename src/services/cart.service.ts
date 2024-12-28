@@ -67,7 +67,7 @@ class CartService {
 
 			let currentQuantity;
 			for (const product of cartDetails.products) {
-                // @ts-ignore
+				// @ts-ignore
 				if (productId === product.productId._id.toString()) {
 					currentQuantity = product.quantity;
 				}
@@ -101,7 +101,9 @@ class CartService {
 				);
 			}
 
-			return await cartModel.findOne({ userId });
+			return await cartModel
+				.findOne({ userId })
+				.populate("products.productId");
 		} catch (error) {
 			throw new Error(
 				`Unable to remove item from cart: ${error.message}`
